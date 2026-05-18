@@ -44,6 +44,7 @@ const modalPrice = document.getElementById('modal-price');
 const modalDescription = document.getElementById('modal-description');
 const modalImgFront = document.getElementById('modal-img-front');
 const modalImgBack = document.getElementById('modal-img-back');
+const modalImages = document.querySelector('.modal__images');
 const sizeOptions = document.getElementById('size-options');
 const sizeError = document.getElementById('size-error');
 const buyBtn = document.getElementById('btn-buy');
@@ -84,6 +85,10 @@ function openModal(product) {
     btn.classList.toggle('modal__img-btn--active', btn.dataset.view === 'front');
   });
 
+  // Reset hover-zoom so the modal never opens mid-zoom
+  modalImages.classList.remove('is-zoomed');
+  modalImages.style.removeProperty('--zoom-origin');
+
   // Reset size selection
   document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
   sizeError.classList.remove('visible');
@@ -122,6 +127,26 @@ document.querySelectorAll('.modal__img-btn').forEach(btn => {
     });
   });
 });
+
+// ---- Hover Zoom (Amazon-style) ----
+// Track the cursor over the image and move the zoom focal point to it.
+// Skipped on touch devices, which have no real hover.
+if (modalImages && window.matchMedia('(hover: hover)').matches) {
+  const clamp = (v) => Math.max(0, Math.min(100, v));
+
+  modalImages.addEventListener('mousemove', (e) => {
+    const rect = modalImages.getBoundingClientRect();
+    const x = clamp(((e.clientX - rect.left) / rect.width) * 100);
+    const y = clamp(((e.clientY - rect.top) / rect.height) * 100);
+    modalImages.style.setProperty('--zoom-origin', `${x}% ${y}%`);
+    modalImages.classList.add('is-zoomed');
+  });
+
+  modalImages.addEventListener('mouseleave', () => {
+    modalImages.classList.remove('is-zoomed');
+    modalImages.style.removeProperty('--zoom-origin');
+  });
+}
 
 // ---- Size Selection ----
 document.querySelectorAll('.size-btn').forEach(btn => {

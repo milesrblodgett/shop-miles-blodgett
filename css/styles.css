@@ -293,11 +293,23 @@ button {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity var(--transition);
+  transform-origin: var(--zoom-origin, center center);
+  transition: opacity var(--transition), transform 0.18s ease-out;
 }
 
 .modal__img--active {
   opacity: 1;
+}
+
+/* Amazon-style hover zoom — pointer devices only (skipped on touch) */
+@media (hover: hover) {
+  .modal__images {
+    cursor: zoom-in;
+  }
+
+  .modal__images.is-zoomed .modal__img--active {
+    transform: scale(2.5);
+  }
 }
 
 .modal__img-toggle {
@@ -320,6 +332,7 @@ button {
   letter-spacing: 0.06em;
   border-radius: 100px;
   color: var(--color-text-secondary);
+  cursor: pointer;
   transition: all var(--transition);
 }
 
