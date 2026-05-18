@@ -11,10 +11,19 @@ const PRODUCTS = [
     id: 'make-friends-not-enemies',
     name: 'Make Friends Not Enemies',
     description: 'A clean white tee with a simple message. Wear what you believe in.',
-    price: 20,
+    price: 25,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     frontImage: '/images/make-friends-not-enemies-front.jpg',
     backImage: '/images/make-friends-not-enemies-back.jpg',
+  },
+  {
+    id: 'project-hail-mary',
+    name: 'Project Hail Mary',
+    description: 'A black tee for the sci-fi faithful. Amaze, amaze, amaze.',
+    price: 35,
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    frontImage: '/images/project-hail-mary-front.jpg',
+    backImage: '/images/project-hail-mary-back.jpg',
   },
   // To add a new product, copy the object above and change the values.
 ];
