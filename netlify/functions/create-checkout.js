@@ -6,6 +6,7 @@
    ================================================ */
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { PRODUCTS } = require('./lib/products');
 
 exports.handler = async (event) => {
   // Only allow POST requests
@@ -17,15 +18,35 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { productId, productName, price, size } = JSON.parse(event.body);
+    const { productId, size } = JSON.parse(event.body);
 
     // Validate the request
-    if (!productId || !productName || !price || !size) {
+    if (!productId || !size) {
       return {
         statusCode: 400,
         body: JSON.stringify({ error: 'Missing required fields' }),
       };
     }
+
+    // Look up the product server-side. The price NEVER comes from the
+    // browser — only the productId does — so a tampered request can't
+    // change what the customer is charged.
+    const product = PRODUCTS[productId];
+    if (!product) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Unknown product' }),
+      };
+    }
+    if (!product.sizes.includes(size)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Invalid size' }),
+      };
+    }
+
+    const productName = product.name;
+    const price = product.price;
 
     // Build the site URL from the request headers
     const origin = `https://${event.headers.host}`;

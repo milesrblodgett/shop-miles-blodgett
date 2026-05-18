@@ -149,8 +149,6 @@ buyBtn.addEventListener('click', async () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         productId: selectedProduct.id,
-        productName: selectedProduct.name,
-        price: selectedProduct.price,
         size: selectedSize,
       }),
     });
