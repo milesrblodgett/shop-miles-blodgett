@@ -19,10 +19,9 @@ const PRODUCTS = {
     price: 35,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   },
-  // TEMPORARY: $1 product for verifying live-mode checkout. Remove after testing.
-  'test-1-dollar': {
-    name: 'TEST — $1 (do not buy)',
-    price: 1,
+  'cloud-kitten': {
+    name: 'That Cloud Looks Just Like a Kitten',
+    price: 30,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   },
 };

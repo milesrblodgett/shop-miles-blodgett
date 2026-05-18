@@ -25,15 +25,14 @@ const PRODUCTS = [
     frontImage: '/images/project-hail-mary-front.jpg',
     backImage: '/images/project-hail-mary-back.jpg',
   },
-  // TEMPORARY: $1 product for verifying live-mode checkout. Remove after testing.
   {
-    id: 'test-1-dollar',
-    name: 'TEST — $1 (do not buy)',
-    description: 'Internal test item to verify live payments. Not a real product.',
-    price: 1,
+    id: 'cloud-kitten',
+    name: 'That Cloud Looks Just Like a Kitten',
+    description: 'A clean white tee for daydreamers. Out past the break, that cloud looks just like a kitten.',
+    price: 30,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    frontImage: '/images/make-friends-not-enemies-front.jpg',
-    backImage: '/images/make-friends-not-enemies-back.jpg',
+    frontImage: '/images/cloud-kitten-front.jpg',
+    backImage: '/images/cloud-kitten-back.jpg',
   },
   // To add a new product, copy the object above and change the values.
 ];
