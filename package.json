@@ -1,0 +1,9 @@
+{
+  "name": "shop-miles-blodgett",
+  "version": "1.0.0",
+  "description": "Shop Miles Blodgett — clothing brand storefront",
+  "private": true,
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}

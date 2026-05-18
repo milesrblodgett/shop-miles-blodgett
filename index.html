@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Miles Blodgett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- ====== NAV ====== -->
+  <nav class="nav">
+    <a href="/" class="nav__logo">Miles Blodgett</a>
+    <a href="#products" class="nav__link">Shop</a>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">Shop Miles Blodgett</h1>
+      <p class="hero__subtitle">Wear what you mean.</p>
+      <a href="#products" class="hero__cta">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ====== PRODUCTS ====== -->
+  <section id="products" class="products">
+    <h2 class="section-title">The Collection</h2>
+    <div class="products__grid">
+
+      <!-- Product Card -->
+      <div class="product-card" data-product="make-friends-not-enemies">
+        <div class="product-card__image-wrap">
+          <img src="/images/make-friends-not-enemies-front.jpg" alt="Make Friends Not Enemies Tee - Front" class="product-card__img product-card__img--front">
+          <img src="/images/make-friends-not-enemies-back.jpg" alt="Make Friends Not Enemies Tee - Back" class="product-card__img product-card__img--back">
+        </div>
+        <div class="product-card__info">
+          <h3 class="product-card__name">Make Friends Not Enemies</h3>
+          <p class="product-card__price">$20</p>
+        </div>
+      </div>
+
+      <!-- Add more product cards here as you add designs -->
+
+    </div>
+  </section>
+
+  <!-- ====== PRODUCT DETAIL MODAL ====== -->
+  <div class="modal" id="product-modal">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close">&times;</button>
+      <div class="modal__body">
+        <div class="modal__images">
+          <img src="" alt="" class="modal__img modal__img--active" id="modal-img-front">
+          <img src="" alt="" class="modal__img" id="modal-img-back">
+          <div class="modal__img-toggle">
+            <button class="modal__img-btn modal__img-btn--active" data-view="front">Front</button>
+            <button class="modal__img-btn" data-view="back">Back</button>
+          </div>
+        </div>
+        <div class="modal__details">
+          <h2 class="modal__name" id="modal-name"></h2>
+          <p class="modal__price" id="modal-price"></p>
+          <p class="modal__description" id="modal-description"></p>
+
+          <div class="modal__sizes">
+            <label class="modal__sizes-label">Select Size</label>
+            <div class="modal__size-options" id="size-options">
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn" data-size="XXL">XXL</button>
+            </div>
+            <p class="modal__size-error" id="size-error">Please select a size</p>
+          </div>
+
+          <button class="btn-buy" id="btn-buy">Buy Now &mdash; $20</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== ABOUT ====== -->
+  <section class="about" id="about">
+    <div class="about__content">
+      <h2 class="section-title">About the Brand</h2>
+      <p class="about__text">
+        Shop Miles Blodgett is a small clothing brand built on the idea that what you
+        wear should say something. Every design is personal, every drop is limited,
+        and every piece is made to start a conversation. This isn't fast fashion &mdash;
+        it's real expression from a real person.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="footer__content">
+      <p class="footer__brand">Shop Miles Blodgett</p>
+      <div class="footer__links">
+        <a href="mailto:milesrblodgett@gmail.com" class="footer__link">Contact</a>
+      </div>
+      <p class="footer__copy">&copy; 2026 Shop Miles Blodgett. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

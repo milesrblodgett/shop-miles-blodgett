@@ -1,0 +1,14 @@
+# Netlify configuration for Shop Miles Blodgett
+
+[build]
+  # No build step needed — this is a static site
+  publish = "."
+
+  # Netlify Functions directory
+  functions = "netlify/functions"
+
+# Redirect for cleaner function URLs (optional)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
