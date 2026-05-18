@@ -17,15 +17,6 @@ const PRODUCTS = [
     backImage: '/images/make-friends-not-enemies-back.jpg',
   },
   {
-    id: 'cloud-kitten',
-    name: 'That Cloud Looks Just Like a Kitten',
-    description: 'A clean white tee for daydreamers. Out past the break, that cloud looks just like a kitten.',
-    price: 30,
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    frontImage: '/images/cloud-kitten-front.jpg',
-    backImage: '/images/cloud-kitten-back.jpg',
-  },
-  {
     id: 'project-hail-mary',
     name: 'Project Hail Mary',
     description: 'A black tee for the sci-fi faithful. Amaze, amaze, amaze.',
@@ -33,6 +24,15 @@ const PRODUCTS = [
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     frontImage: '/images/project-hail-mary-front.jpg',
     backImage: '/images/project-hail-mary-back.jpg',
+  },
+  {
+    id: 'cloud-kitten',
+    name: 'Chicken Joe',
+    description: 'A clean white tee for daydreamers. Out past the break, that cloud looks just like a kitten.',
+    price: 30,
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    frontImage: '/images/cloud-kitten-front.jpg',
+    backImage: '/images/cloud-kitten-back.jpg',
   },
   // To add a new product, copy the object above and change the values.
 ];

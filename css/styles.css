@@ -308,7 +308,7 @@ button {
   }
 
   .modal__images.is-zoomed .modal__img--active {
-    transform: scale(2.5);
+    transform: scale(3);
   }
 }
 

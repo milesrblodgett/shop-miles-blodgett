@@ -20,7 +20,7 @@ const PRODUCTS = {
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   },
   'cloud-kitten': {
-    name: 'That Cloud Looks Just Like a Kitten',
+    name: 'Chicken Joe',
     price: 30,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   },
