@@ -36,14 +36,21 @@ exports.handler = async (event) => {
     // Pull out the order details
     const customerName = session.customer_details?.name || 'N/A';
     const customerEmail = session.customer_details?.email || 'N/A';
-    const shipping = session.shipping_details?.address || {};
+    const shipping = session.collected_information?.shipping_details?.address || {};
     const metadata = session.metadata || {};
     const amountTotal = (session.amount_total / 100).toFixed(2);
+
+    // Build "City, State ZIP" from only the parts that exist so a missing
+    // field never prints the literal word "undefined".
+    const cityStateZip = [
+      shipping.city,
+      [shipping.state, shipping.postal_code].filter(Boolean).join(' '),
+    ].filter(Boolean).join(', ');
 
     const shippingAddress = [
       shipping.line1,
       shipping.line2,
-      `${shipping.city}, ${shipping.state} ${shipping.postal_code}`,
+      cityStateZip,
       shipping.country,
     ].filter(Boolean).join('\n');
 
