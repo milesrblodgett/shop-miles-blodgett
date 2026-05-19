@@ -5,12 +5,11 @@
 
 // ---- Product Data ----
 // Add new products to this array as you create new designs.
-// Each product needs: id, name, description, price (in dollars), and image slugs.
+// Each product needs: id, name, price (in dollars), and image slugs.
 const PRODUCTS = [
   {
     id: 'make-friends-not-enemies',
     name: 'Make Friends Not Enemies',
-    description: 'A clean white tee with a simple message. Wear what you believe in.',
     price: 25,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     frontImage: '/images/make-friends-not-enemies-front.jpg',
@@ -19,7 +18,6 @@ const PRODUCTS = [
   {
     id: 'project-hail-mary',
     name: 'Project Hail Mary',
-    description: 'A black tee for the sci-fi faithful. Amaze, amaze, amaze.',
     price: 35,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     frontImage: '/images/project-hail-mary-front.jpg',
@@ -28,7 +26,6 @@ const PRODUCTS = [
   {
     id: 'cloud-kitten',
     name: 'Chicken Joe',
-    description: 'A clean white tee for daydreamers. Out past the break, that cloud looks just like a kitten.',
     price: 30,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     frontImage: '/images/cloud-kitten-front.jpg',
@@ -41,7 +38,6 @@ const PRODUCTS = [
 const modal = document.getElementById('product-modal');
 const modalName = document.getElementById('modal-name');
 const modalPrice = document.getElementById('modal-price');
-const modalDescription = document.getElementById('modal-description');
 const modalImgFront = document.getElementById('modal-img-front');
 const modalImgBack = document.getElementById('modal-img-back');
 const modalImages = document.querySelector('.modal__images');
@@ -71,7 +67,6 @@ function openModal(product) {
   // Fill in modal content
   modalName.textContent = product.name;
   modalPrice.textContent = `$${product.price}`;
-  modalDescription.textContent = product.description;
   modalImgFront.src = product.frontImage;
   modalImgFront.alt = `${product.name} - Front`;
   modalImgBack.src = product.backImage;

@@ -362,13 +362,6 @@ button {
   font-weight: 500;
 }
 
-.modal__description {
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
 .modal__sizes-label {
   font-size: 0.8rem;
   font-weight: 500;
